@@ -544,44 +544,6 @@ function CV() {
               </a>
             </div>
           </Reveal>
-
-          <Reveal delay={0.12}>
-            <div className="cv-card">
-              <h3>Upload a document</h3>
-              <p>Recruiters can attach a job description or reference document here before reaching out.</p>
-              <div
-                className={`upload-dropzone${dragging ? ' dragging' : ''}`}
-                onClick={() => inputRef.current?.click()}
-                onDragOver={(e) => {
-                  e.preventDefault()
-                  setDragging(true)
-                }}
-                onDragLeave={() => setDragging(false)}
-                onDrop={(e) => {
-                  e.preventDefault()
-                  setDragging(false)
-                  handleFiles(e.dataTransfer.files)
-                }}
-              >
-                <UploadCloud size={22} style={{ color: 'var(--accent)' }} />
-                <div style={{ marginTop: 10, fontSize: 13.5, color: 'var(--ink-soft)' }}>
-                  Click to browse or drag a file here
-                </div>
-                <input
-                  ref={inputRef}
-                  type="file"
-                  style={{ display: 'none' }}
-                  onChange={(e) => handleFiles(e.target.files)}
-                />
-              </div>
-              {file && (
-                <div className="upload-filename">
-                  <FileText size={13} style={{ verticalAlign: '-2px', marginRight: 6 }} />
-                  {file.name}
-                </div>
-              )}
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>
