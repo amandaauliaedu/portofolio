@@ -299,8 +299,8 @@ function HeroAbout() {
 
         <Reveal delay={0.1} y={16}>
           <div className="hero-photo-wrap">
-            {/* Replace /profile.jpg (in the public folder) with Amanda's real photo */}
-            <img src="/profile.jpg" alt="Amanda Aulia profile photo" />
+            {/* Replace /profile.jpeg (in the public folder) with Amanda's real photo */}
+            <img src="/profile.jpeg" alt="Amanda Aulia profile photo" />
             <div className="hero-photo-frame" />
           </div>
         </Reveal>
