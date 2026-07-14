@@ -1,7 +1,7 @@
 # Portfolio — Amanda Aulia
 
-A portfolio website built with **React (Vite)** and **Framer Motion**, based on Amanda Aulia's CV
-(Data Scientist / Data Analyst).
+A bilingual (Indonesian/English) portfolio site built with **React (Vite)**, **Tailwind CSS**, and
+**Framer Motion**.
 
 ## Run locally
 
@@ -20,60 +20,61 @@ Open `http://localhost:5173` in your browser.
 npm run build
 ```
 
-The output is in the `dist/` folder, ready to deploy to Vercel, Netlify, GitHub Pages, etc.
+Output is in the `dist/` folder, ready to deploy to Vercel, Netlify, GitHub Pages, etc.
 
 ## Project structure
 
 ```
 ├── index.html
 ├── package.json
+├── tailwind.config.js
+├── postcss.config.js
 ├── vite.config.js
 └── src/
     ├── main.jsx      # entry point
-    ├── App.jsx        # all sections of the portfolio
-    └── index.css      # design tokens (colors, fonts), light/dark theme, styling
+    ├── App.jsx        # the entire portfolio (all sections + logic)
+    └── index.css      # Tailwind directives
 ```
 
 ## Editing content
 
-All data (education, experience, projects, skills, certifications, organizations, contact) lives
-near the top of `src/App.jsx` as plain JavaScript arrays/objects (`EDUCATION`, `EXPERIENCE`,
-`PROJECTS`, `SKILLS`, `CERTS`, `ORGS`, `ROLES`). Edit the text there — no need to touch the
-component code below it.
+All content lives near the top of `src/App.jsx` as plain JavaScript arrays/objects — `NAV`,
+`ROLES`, `ABOUT`, `EDUCATION`, `EXPERIENCE`, `PROJECTS`, `SKILLS`, `CERTS`, `ORGS`, `COMMITTEES`,
+and the `T` dictionary for UI labels. Most text fields use a bilingual `{ id: "...", en: "..." }`
+shape — edit both, or just one language if you don't need the other.
 
 ## Features
 
-- **Light / dark mode** — toggle button in the top navigation (sun/moon icon). The choice is saved
-  in the browser (`localStorage`) and defaults to the visitor's system preference on first visit.
-- **Rotating role text** under the name on the hero, cycling through `ROLES` (`Data Analyst`,
-  `Data Science`, `Marketing Research`) — edit the `ROLES` array to change them.
-- **CV section** with a real "Download CV (PDF)" button, plus a client-side "Upload a document"
-  dropzone. Note: since this is a static site, the upload only works in the visitor's browser
-  session (it shows the selected file name) — to actually receive uploaded files you'll need to
-  connect it to a backend or a storage service (e.g. an API route, Firebase, or an email/file
-  upload service).
-- Scroll-reveal animations (fade + slide up) via Framer Motion throughout.
+- **Light / dark mode** toggle (sun/moon icon, top right of the nav).
+- **ID / EN language switch** next to the theme toggle — nearly all copy is bilingual.
+- **Rotating role text** under the name (`ROLES` array — Data Analyst / Data Scientist / ML
+  Enthusiast). Edit the array to change the roles shown.
+- **CV download button** in the hero, next to "Get in Touch" — links to the real CV PDF.
+- Auto-advancing **skills carousel** and **certificates coverflow carousel**.
+- Filterable **projects grid** by category, with a featured project shown larger.
+- A contact form that opens the visitor's email client with a pre-filled message (`mailto:`),
+  plus a click-to-copy email address and a WhatsApp link.
+- Scroll-reveal animations throughout via Framer Motion.
 
 ## Replace placeholder images with real assets
 
-All images live in the `public/` folder and are currently gray placeholders labeled "replace this
-image" — the files are named to match their content so they're easy to find:
-
 | What | File location | Used in |
 |---|---|---|
-| Profile photo | `public/profile.jpg` | Hero (top of page) |
-| CV / résumé PDF | `public/Amanda_Aulia_CV.pdf` | CV section (already the real uploaded CV) |
-| 8 certificate images | `public/certs/*.jpg` | Skills → Certifications |
-| 4 organization documentation images | `public/orgs/*.jpg` | Skills → Organizations |
+| Profile photo | `public/profile.jpg` | Hero, next to the name |
+| CV / résumé PDF | `public/Amanda_Aulia_CV.pdf` | "Download CV" button in the hero |
 
-Simply overwrite the file with the same name using your real photo/scan — no code changes needed.
-If you'd rather use different filenames, update the `image` path for that item in `src/App.jsx`
-(in the `CERTS` and `ORGS` arrays).
+Overwrite these files with the real photo/PDF — no code changes needed.
 
-## Update project, certificate, and organization links
+## Update social & project links
 
-In `src/App.jsx`, every item in the `PROJECTS`, `CERTS`, and `ORGS` arrays has a `link` field that
-currently points to an example URL (`example.com` / placeholder GitHub). Replace them with:
-- `PROJECTS[].link` → the GitHub repo or live demo for each project
-- `CERTS[].link` → the real certificate verification URL (e.g. a Coursera or Credly link)
-- `ORGS[].link` → a link to real documentation or a certificate for that organizational activity
+In `src/App.jsx`:
+- `SOCIALS` → LinkedIn, GitHub, email, and WhatsApp links (top of the file)
+- `PROJECTS[].` → add a `link` field per project if you want a "view project" link (not included
+  by default in this template — the cards currently just display an arrow icon as a visual accent)
+
+## About the "Topic-Based Legislation Network Mapping" publication
+
+This version intentionally does **not** include the "Topic-Based Legislation Network Mapping with
+ChatGPT and Neo4j" publication. Instead, it adds three other projects from the CV: **PCA Impact
+Analysis**, **Study Program News Retrieval** (TF-IDF & Cosine Similarity), and **Classification
+Model Comparison**. If you'd like the Neo4j publication included after all, just ask.
