@@ -105,12 +105,13 @@ const PROJECTS = [
   {
     year: "2026",
     title: "FORRISX",
+    github: "https://github.com/amandaauliaedu/Forrisx",
     tagline: { id: "Peramalan Harga Saham & Risiko Kerugian dengan ARIMAX dan Value-at-Risk", en: "Forecasting Stock Price & Loss Risk with ARIMAX and Value-at-Risk" },
     desc: { id: "Website analisis prediktif untuk peramalan harga saham berbasis time series, dipublikasikan di Journal BIT-TECH dan terdaftar hak cipta di DJKI Kemenkumham RI.", en: "Predictive-analytics website for time-series stock price forecasting, published in the BIT-TECH Journal and copyright-registered with Indonesia's DJKI." },
     metrics: [{ label: "MAPE", value: "2.19%" }, { label: "VaR 95%", value: "1.71%" }],
     tags: ["ARIMAX", "Time Series", "Value-at-Risk", "Flask"],
     categories: ["Data Analytics", "Time Series"],
-    featured: true,
+    featured: false,
     icon: TrendingUp,
   },
   {
@@ -241,22 +242,21 @@ const SKILLS = [
 ];
 
 const CERTS = [
-  { name: "Junior Web Programmer", issuer: "BNSP", date: "2023" },
-  { name: "Data Bercerita Menggunakan Tableau", issuer: "Sains Data UPN", date: "2022" },
-  { name: "Pengolahan dan Analisis Data dengan SPSS", issuer: "Sains Data UPN", date: "2022" },
-  { name: "Mathematics for ML and Data Science", issuer: "Coursera", date: "2023" },
-  { name: "Machine Learning Specialization", issuer: "Coursera", date: "2023" },
-  { name: "DeepLearning.AI TensorFlow Developer", issuer: "Coursera", date: "2023" },
-  { name: "TensorFlow: Data and Deployment", issuer: "Coursera", date: "2023" },
-  { name: "Bangkit Academy 2023 - Machine Learning", issuer: "Kampus Merdeka - MSIB", date: "2023" },
-  { name: "Become an Excel Expert in 2 Weeks", issuer: "KarirNex", date: "2026" },
+  { name: "Junior Web Programmer", issuer: "BNSP", date: "2023", image: "/certs/bnsp-junior-web-programmer.jpg" },
+  { name: "Data Bercerita Menggunakan Tableau", issuer: "Sains Data UPN", date: "2022", image: "/certs/tableau-data-bercerita.jpg" },
+  { name: "Pengolahan dan Analisis Data dengan SPSS", issuer: "Sains Data UPN", date: "2022", image: "/certs/spss-pengolahan-data.jpg" },
+  { name: "Mathematics for ML and Data Science", issuer: "Coursera", date: "2023", image: "/certs/math-for-ml.jpg" },
+  { name: "Machine Learning Specialization", issuer: "Coursera", date: "2023", image: "/certs/machine-learning-specialization.jpg" },
+  { name: "DeepLearning.AI TensorFlow Developer", issuer: "Coursera", date: "2023", image: "/certs/tensorflow-developer.jpg" },
+  { name: "TensorFlow: Data and Deployment", issuer: "Coursera", date: "2023", image: "/certs/tensorflow-data-deployment.jpg" },
+  { name: "Become an Excel Expert in 2 Weeks", issuer: "KarirNex", date: "2026", image: "/certs/excel-expert.jpg" },
 ];
 
 const ORGS = [
-  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Bendahara", en: "Treasurer" }, period: "2024 – 2025" },
-  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Departemen Hubungan Masyarakat", en: "Public Relations Department" }, period: "2023 – 2024" },
-  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Staf Komisi 2, Badan Legislatif Jurusan", en: "Staff, Commission 2 — Departmental Legislative Body" }, period: "2023 – 2024" },
-  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Departemen Advokasi dan Kesejahteraan Mahasiswa", en: "Student Advocacy & Welfare Department" }, period: "2022 – 2023" },
+  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Bendahara", en: "Treasurer" }, period: "2024 – 2025", image: "/orgs/ukm-badminton-bendahara.jpg" },
+  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Departemen Hubungan Masyarakat", en: "Public Relations Department" }, period: "2023 – 2024", image: "/orgs/ukm-badminton-humas.jpg" },
+  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Staf Komisi 2, Badan Legislatif Jurusan", en: "Staff, Commission 2 — Departmental Legislative Body" }, period: "2023 – 2024", image: "/orgs/himasada-blj.jpg" },
+  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Departemen Advokasi dan Kesejahteraan Mahasiswa", en: "Student Advocacy & Welfare Department" }, period: "2022 – 2023", image: "/orgs/himasada-advokesma.jpg" },
 ];
 
 const COMMITTEES = [
@@ -349,7 +349,14 @@ function SocialIcon({ s, theme, size = 38 }) {
 }
 
 /* Certificate "paper" mock visual — used in the certifications carousel and org cards */
-function CertPaper({ height = 128, accent, compact = false }) {
+function CertPaper({ height = 128, accent, compact = false, image, alt = "" }) {
+  if (image) {
+    return (
+      <div className="w-full overflow-hidden" style={{ height, background: "#F3F0E8" }}>
+        <img src={image} alt={alt} className="w-full h-full object-cover" />
+      </div>
+    );
+  }
   return (
     <div className="w-full flex flex-col justify-between p-3 md:p-4" style={{ height, background: "#F3F0E8" }}>
       <div className="flex items-center justify-between">
@@ -771,7 +778,7 @@ export default function AmandaAuliaPortfolio() {
                     className={`rounded-2xl border overflow-hidden shrink-0 ${isCenter ? "w-56 md:w-72" : "hidden sm:block w-40 md:w-56"}`}
                     style={{ borderColor: theme.cardBorder, background: theme.cardBg }}
                   >
-                    <CertPaper height={isCenter ? 140 : 110} accent={accentCycle[(certIdx + offset + CERTS.length) % 3]} compact={!isCenter} />
+                    <CertPaper height={isCenter ? 140 : 110} accent={accentCycle[(certIdx + offset + CERTS.length) % 3]} compact={!isCenter} image={c.image} alt={c.name} />
                     <div className="p-4">
                       <p className={`font-semibold leading-snug ${isCenter ? "text-sm md:text-base" : "text-xs"}`} style={{ color: theme.text }}>{c.name}</p>
                       <p className="text-xs mt-1" style={{ color: accents.violet }}>{c.issuer}</p>
@@ -804,7 +811,7 @@ export default function AmandaAuliaPortfolio() {
           {ORGS.map((o, i) => (
             <Reveal key={i} delay={i * 0.06}>
               <GlassCard theme={theme} className="overflow-hidden" style={{ padding: 0 }}>
-                <CertPaper height={72} accent={accentCycle[i % 3]} compact />
+                <CertPaper height={72} accent={accentCycle[i % 3]} compact image={o.image} alt={o.org} />
                 <div className="p-5">
                   <p className="font-semibold" style={fontDisplay}>{o.org}</p>
                   <p className="text-sm mt-1" style={{ color: accents.violet }}>{L(o.role, lang)}</p>
