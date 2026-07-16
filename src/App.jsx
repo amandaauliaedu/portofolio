@@ -38,6 +38,14 @@ import {
   Menu,
   X,
   Download,
+  Code2,
+  Sigma,
+  FileSpreadsheet,
+  FileText,
+  Presentation,
+  FileBarChart,
+  Cloud,
+  Terminal,
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
@@ -105,7 +113,7 @@ const PROJECTS = [
   {
     year: "2026",
     title: "FORRISX",
-    github: "https://github.com/amandaauliaedu/Forrisx",
+    link: "https://github.com/amandaauliaedu/forrisx",
     tagline: { id: "Peramalan Harga Saham & Risiko Kerugian dengan ARIMAX dan Value-at-Risk", en: "Forecasting Stock Price & Loss Risk with ARIMAX and Value-at-Risk" },
     desc: { id: "Website analisis prediktif untuk peramalan harga saham berbasis time series, dipublikasikan di Journal BIT-TECH dan terdaftar hak cipta di DJKI Kemenkumham RI.", en: "Predictive-analytics website for time-series stock price forecasting, published in the BIT-TECH Journal and copyright-registered with Indonesia's DJKI." },
     metrics: [{ label: "MAPE", value: "2.19%" }, { label: "VaR 95%", value: "1.71%" }],
@@ -117,6 +125,7 @@ const PROJECTS = [
   {
     year: "2023",
     title: "Laper.in",
+    link: "https://github.com/amandaauliaedu/laperin",
     tagline: { id: "Make Food with Several Recipe — Capstone Bangkit 2023", en: "Make Food with Several Recipe — Bangkit 2023 Capstone" },
     desc: { id: "Model klasifikasi citra bahan makanan (15 kelas, 450 gambar latih) dengan MobileNetV2, lengkap dengan rekomendasi resep dan tautan video.", en: "Image classification model for food ingredients (15 classes, 450 training images) using MobileNetV2, paired with recipe and video recommendations." },
     metrics: [{ label: "Classes", value: "15" }, { label: "Model", value: "MobileNetV2" }],
@@ -128,6 +137,7 @@ const PROJECTS = [
   {
     year: "2023",
     title: "FishGrom",
+    link: "https://github.com/amandaauliaedu/fishgrom",
     tagline: { id: "Alat Monitoring Ikan Non-Kontak Berbasis Binocular Stereo Vision (PKM-KC)", en: "Non-Contact Fish Monitoring via Binocular Stereo Vision (PKM-KC)" },
     desc: { id: "Sistem deteksi jumlah dan ukuran ikan bandeng menggunakan OpenCV, didanai Rp 9.000.000 dan memperoleh sertifikat hak cipta DJKI.", en: "System for detecting the count and size of milkfish using OpenCV, funded with Rp 9,000,000 and awarded a DJKI copyright certificate." },
     metrics: [{ label: "Error rate", value: "0.21%" }, { label: "Funding", value: "Rp 9jt" }],
@@ -139,6 +149,7 @@ const PROJECTS = [
   {
     year: "2024",
     title: "SIMBA Jatim",
+    link: "https://github.com/amandaauliaedu/simba-jatim",
     tagline: { id: "Sistem Informasi Monitoring Bencana Alam Berbasis Dashboard & Peta Spasial", en: "Disaster Monitoring Information System with Dashboard & Spatial Map" },
     desc: { id: "Dibangun selama magang di Dinas Sosial Provinsi Jawa Timur untuk memantau kejadian bencana alam harian se-Jawa Timur secara real-time.", en: "Built during an internship at the East Java Social Affairs Office to track daily disaster events across the province in real time." },
     metrics: [{ label: "Cakupan", value: "38 Kab/Kota" }, { label: "Stack", value: "Flask" }],
@@ -150,6 +161,7 @@ const PROJECTS = [
   {
     year: "2023",
     title: "PCA Impact Analysis",
+    link: "https://github.com/amandaauliaedu/pca-impact-analysis",
     tagline: { id: "Analisis Dampak Reduksi Dimensi PCA pada Model Klasifikasi", en: "PCA Dimensionality Reduction Impact Analysis" },
     desc: {
       id: "Mengevaluasi dampak Principal Component Analysis (PCA) pada kinerja model klasifikasi menggunakan dataset pasien hepatitis (155 baris, 20 fitur). Decision Tree unggul sebelum reduksi (akurasi 90.3%, F1 95.8%), sementara Logistic Regression meningkat setelah PCA (akurasi 90.3%, F1 93.3%).",
@@ -164,6 +176,7 @@ const PROJECTS = [
   {
     year: "2022",
     title: "Study Program News Retrieval",
+    link: "https://github.com/amandaauliaedu/news-retrieval-tfidf",
     tagline: { id: "Temu Kembali Informasi Berita Kegiatan Program Studi (TF-IDF & Cosine Similarity)", en: "Study Program News Information Retrieval (TF-IDF & Cosine Similarity)" },
     desc: {
       id: "Mengembangkan prototipe sistem penelusuran informasi untuk mencari konten berita program studi menggunakan algoritma TF-IDF dan Cosine Similarity, diuji pada 22 konten berita Sains Data UPN Veteran Jawa Timur.",
@@ -178,6 +191,7 @@ const PROJECTS = [
   {
     year: "2023",
     title: "Classification Model Comparison",
+    link: "https://github.com/amandaauliaedu/classification-model-comparison",
     tagline: { id: "Analisis Perbandingan Performa Model Klasifikasi", en: "Classification Model Performance Comparison" },
     desc: {
       id: "Membandingkan kinerja K-Nearest Neighbor, Logistic Regression, Naïve Bayes, dan Decision Tree pada dataset Iris dan Patient Treatment — mencakup praproses data, EDA, feature engineering, hingga evaluasi model.",
@@ -205,22 +219,22 @@ const SKILLS = [
   {
     group: { id: "Bahasa Pemrograman", en: "Programming Languages" },
     items: [
-      { label: "Python", type: "img", slug: "python" },
-      { label: "R", type: "img", slug: "r" },
+      { label: "Python", type: "icon", Icon: Code2 },
+      { label: "R", type: "icon", Icon: Sigma },
       { label: "SQL", type: "icon", Icon: Database },
     ],
   },
   {
     group: { id: "Tools", en: "Tools" },
     items: [
-      { label: "Excel", type: "img", slug: "microsoftexcel" },
-      { label: "Word", type: "img", slug: "microsoftword" },
-      { label: "PowerPoint", type: "img", slug: "microsoftpowerpoint" },
-      { label: "SPSS", type: "img", slug: "ibm" },
-      { label: "Tableau", type: "img", slug: "tableau" },
-      { label: "MySQL", type: "img", slug: "mysql" },
-      { label: "Google Colab", type: "img", slug: "googlecolab" },
-      { label: "VS Code", type: "img", slug: "visualstudiocode" },
+      { label: "Excel", type: "icon", Icon: FileSpreadsheet },
+      { label: "Word", type: "icon", Icon: FileText },
+      { label: "PowerPoint", type: "icon", Icon: Presentation },
+      { label: "SPSS", type: "icon", Icon: FileBarChart },
+      { label: "Tableau", type: "icon", Icon: LineChart },
+      { label: "MySQL", type: "icon", Icon: Database },
+      { label: "Google Colab", type: "icon", Icon: Cloud },
+      { label: "VS Code", type: "icon", Icon: Terminal },
     ],
   },
   {
@@ -700,7 +714,9 @@ export default function AmandaAuliaPortfolio() {
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center justify-between mb-1">
                         <p className={`font-semibold ${p.featured ? "text-2xl" : "text-xl"}`} style={fontDisplay}>{p.title}</p>
-                        <ArrowUpRight size={15} style={{ color: theme.faint }} />
+                        <a href={p.link} target="_blank" rel="noreferrer" aria-label={`Open ${p.title} on GitHub`} className="shrink-0 p-1 -m-1 rounded-full transition-colors" style={{ color: theme.faint }} onMouseEnter={(e) => (e.currentTarget.style.color = accents.violet)} onMouseLeave={(e) => (e.currentTarget.style.color = theme.faint)}>
+                          <ArrowUpRight size={15} />
+                        </a>
                       </div>
                       <p className="text-sm mb-3" style={{ color: accents.violet }}>{L(p.tagline, lang)}</p>
                       <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: theme.subtext }}>{L(p.desc, lang)}</p>
