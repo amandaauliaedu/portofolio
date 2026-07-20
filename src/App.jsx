@@ -305,7 +305,7 @@ const T = {
   committeesLabel: { id: "KEPANITIAAN", en: "COMMITTEES" },
   sectionContactEyebrow: { id: "Kontak", en: "Contact" },
   contactHeading1: { id: "Mari terhubung, ", en: "Let's talk, " },
-  contactHeading2: { id: "yuk?", en: "shall we?" },
+  contactHeading2: { id: "Yuk ", en: "Shall we " },
   contactSub: { id: "Terbuka untuk peluang kerja, kolaborasi proyek data, atau sekadar ngobrol soal data & AI. Klik email untuk menyalin, atau isi form di samping.", en: "Open to job opportunities, data project collaborations, or just geeking out about data & AI. Click the email to copy it, or fill out the form." },
   emailLabel: { id: "Email — klik untuk salin", en: "Email — click to copy" },
   copied: { id: "Tersalin!", en: "Copied!" },
