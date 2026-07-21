@@ -62,8 +62,13 @@ shape — edit both, or just one language if you don't need the other.
 |---|---|---|
 | Profile photo | `public/profile.jpg` | Hero, next to the name |
 | CV / résumé PDF | `public/Amanda_Aulia_CV.pdf` | "Download CV" button in the hero |
+| 2 education images | `public/education/*.jpg` | About → Education cards |
+| 4 organization images | `public/orgs/*.jpg` | Activities → Organizations |
+| 12 committee images | `public/committees/*.jpg` | Activities → Committees (horizontal scroll) |
+| Favicon | `public/favicon.svg` | Browser tab icon |
 
-Overwrite these files with the real photo/PDF — no code changes needed.
+Click any education, organization, or committee image on the live site to open it full-size in a
+lightbox.
 
 ## Update social & project links
 

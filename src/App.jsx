@@ -46,6 +46,8 @@ import {
   FileBarChart,
   Cloud,
   Terminal,
+  ExternalLink,
+  Maximize2,
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
@@ -54,10 +56,12 @@ import {
 
 const NAV = [
   { id: "Tentang", en: "About", href: "about" },
+  { id: "Pendidikan", en: "Education", href: "education" },
   { id: "Pengalaman", en: "Experience", href: "experience" },
   { id: "Proyek", en: "Projects", href: "projects" },
   { id: "Keahlian", en: "Skills", href: "skills" },
-  { id: "Organisasi", en: "Activities", href: "activities" },
+  { id: "Sertifikasi", en: "Certifications", href: "certifications" },
+  { id: "Organisasi", en: "Organizations", href: "activities" },
   { id: "Kontak", en: "Contact", href: "contact" },
 ];
 
@@ -75,8 +79,8 @@ const SOCIALS = [
 ];
 
 const ABOUT = {
-  id: "Lulusan terbaik Program Studi Sains Data, Universitas Pembangunan Nasional Veteran Jawa Timur, dengan IPK 3.89 dan predikat Cumlaude, serta Distinction Graduate Bangkit Academy 2023. Saya senang mengubah data mentah menjadi wawasan lewat analisis data, statistika, dan machine learning — didukung Excel, Python, SQL, Tableau, dan SPSS. Di luar akademik, saya aktif berorganisasi dan menjadi panitia berbagai kegiatan, mengasah komunikasi, kerja sama tim, dan problem-solving. Saat ini saya sedang mencari kesempatan untuk bertumbuh lebih jauh di dunia data.",
-  en: "Top graduate of the Data Science program at Universitas Pembangunan Nasional Veteran Jawa Timur, with a 3.89 GPA (Cumlaude) and a Distinction Graduate title from Bangkit Academy 2023. I enjoy turning raw data into insight through data analysis, statistics, and machine learning — working with Excel, Python, SQL, Tableau, and SPSS. Beyond academics, I've stayed active in student organizations and event committees, sharpening communication, teamwork, and problem-solving. I'm currently looking for the next opportunity to grow further in data.",
+  id: "Lulusan terbaik S1 Sains Data UPN Veteran Jawa Timur (IPK 3.89) serta Distinction Graduate Bangkit Academy 2023 Batch 2. Selama studi, saya memiliki minat utama dan kompetensi di bidang yang berkaitan dengan data, seperti analisis data, statistika, dan machine learning dengan pengalaman menggunakan Python, SQL, Excel, Tableau, dan SPSS. Selain fokus pada akademik, saya juga mengikuti berbagai pelatihan serta aktif berpartisipasi dalam organisasi dan kepanitiaan baik di dalam maupun di luar kampus. Saat ini, saya aktif mencari peluang kerja untuk memperluas pengetahuan dan mendapatkan pengalaman praktis di bidang data. Terampil dalam berkomunikasi dan bekerja sama, baik secara individu maupun dalam tim, sehingga mampu berkontribusi pada lingkungan kerja yang kolaboratif. Memiliki antusiasme tinggi untuk terus belajar dan mengembangkan diri di bidang data, khususnya sebagai data scientist dan data analyst.",
+  en: "Top graduate of the Data Science bachelor's program at UPN Veteran Jawa Timur (GPA 3.89) and a Distinction Graduate of Bangkit Academy 2023 Batch 2. Throughout my studies, my main interest and competency has centered on data-related fields — data analysis, statistics, and machine learning — with hands-on experience using Python, SQL, Excel, Tableau, and SPSS. Beyond academics, I've taken part in various training programs and stayed active in student organizations and event committees, both on and off campus. I'm currently looking for work opportunities to broaden my knowledge and gain hands-on experience in the data field. I'm skilled at communicating and collaborating, both individually and in teams, which lets me contribute to a collaborative work environment. I have a strong enthusiasm for continuous learning and growth in the data field, particularly as a data scientist and data analyst.",
 };
 
 const EDUCATION = [
@@ -84,16 +88,25 @@ const EDUCATION = [
     school: "Universitas Pembangunan Nasional Veteran Jawa Timur",
     period: "Sep 2021 – Des 2025",
     degree: { id: "S1 Sains Data · IPK 3.89/4.00 · Cumlaude", en: "B.Sc. Data Science · GPA 3.89/4.00 · Cumlaude" },
-    note: { id: "Lulusan Terbaik Prodi Sains Data, Wisuda ke-97.", en: "Top graduate of the Data Science program, 97th Commencement." },
+    image: "/education/upn-veteran-jatim.jpg",
+    link: "https://drive.google.com/drive/folders/1PQTg5O96udEsRNijI7E2QMgt7jMQWEdP?usp=drive_link",
+    points: [
+      { id: "Lulusan Terbaik Program Studi Sains Data, Wisuda UPN Veteran Jawa Timur ke-97.", en: "Top graduate of the Data Science program, 97th Commencement of UPN Veteran Jawa Timur." },
+      { id: "Mata kuliah inti: Algoritma Pemrograman, Basis Data, Matematika Sains Data, Statistika, Machine Learning, Data Mining, Big Data.", en: "Core coursework: Programming Algorithms, Databases, Mathematics for Data Science, Statistics, Machine Learning, Data Mining, Big Data." },
+    ],
   },
   {
     school: "Bangkit Academy 2023 Batch 2",
     period: "Agu 2023 – Jan 2024",
     degree: { id: "Machine Learning Path · Distinction Graduate · 93.98/100", en: "Machine Learning Path · Distinction Graduate · 93.98/100" },
-    note: {
-      id: "Top 10% dari 1973 peserta. Menyelesaikan 11 kursus intensif Python, Data Analysis, ML, dan TensorFlow.",
-      en: "Top 10% out of 1973 participants. Completed 11 intensive courses in Python, Data Analysis, ML, and TensorFlow.",
-    },
+    image: "/education/bangkit-academy.jpg",
+    link: "https://drive.google.com/drive/folders/1i704oRcUZQhFZkqA7R1DyF7AyrSdrGsm?usp=drive_link",
+    points: [
+      { id: "Top 10% dari 1.973 peserta dengan nilai akhir 93.98/100.", en: "Top 10% out of 1,973 participants with a final score of 93.98/100." },
+      { id: "Menyelesaikan 11 kursus intensif Python, Data Analysis, Machine Learning, dan TensorFlow.", en: "Completed 11 intensive courses in Python, Data Analysis, Machine Learning, and TensorFlow." },
+      { id: "Mengembangkan model Machine Learning untuk mendeteksi citra bahan makanan dan merekomendasikan resep.", en: "Developed a Machine Learning model to detect food-ingredient images and recommend matching recipes." },
+      { id: "Mencapai nilai 98% dalam pelatihan Bahasa Inggris untuk Komunikasi Bisnis.", en: "Achieved a 98% score in the Business English Communication training." },
+    ],
   },
 ];
 
@@ -125,7 +138,7 @@ const PROJECTS = [
   {
     year: "2023",
     title: "Laper.in",
-    link: "https://github.com/amandaauliaedu/laperin",
+    link: "https://github.com/Laper-in",
     tagline: { id: "Make Food with Several Recipe — Capstone Bangkit 2023", en: "Make Food with Several Recipe — Bangkit 2023 Capstone" },
     desc: { id: "Model klasifikasi citra bahan makanan (15 kelas, 450 gambar latih) dengan MobileNetV2, lengkap dengan rekomendasi resep dan tautan video.", en: "Image classification model for food ingredients (15 classes, 450 training images) using MobileNetV2, paired with recipe and video recommendations." },
     metrics: [{ label: "Classes", value: "15" }, { label: "Model", value: "MobileNetV2" }],
@@ -148,8 +161,8 @@ const PROJECTS = [
   },
   {
     year: "2024",
-    title: "SIMBA Jatim",
-    link: "https://github.com/amandaauliaedu/simba-jatim",
+    title: "Simba Dinsos Jatim",
+    link: "https://github.com/amandaauliaedu/simba-dinsos-jatim",
     tagline: { id: "Sistem Informasi Monitoring Bencana Alam Berbasis Dashboard & Peta Spasial", en: "Disaster Monitoring Information System with Dashboard & Spatial Map" },
     desc: { id: "Dibangun selama magang di Dinas Sosial Provinsi Jawa Timur untuk memantau kejadian bencana alam harian se-Jawa Timur secara real-time.", en: "Built during an internship at the East Java Social Affairs Office to track daily disaster events across the province in real time." },
     metrics: [{ label: "Cakupan", value: "38 Kab/Kota" }, { label: "Stack", value: "Flask" }],
@@ -161,7 +174,7 @@ const PROJECTS = [
   {
     year: "2023",
     title: "PCA Impact Analysis",
-    link: "https://github.com/amandaauliaedu/pca-impact-analysis",
+    link: "https://github.com/amandaauliaedu/PCA-impact-on-Hepatitis-Dataset-Classification",
     tagline: { id: "Analisis Dampak Reduksi Dimensi PCA pada Model Klasifikasi", en: "PCA Dimensionality Reduction Impact Analysis" },
     desc: {
       id: "Mengevaluasi dampak Principal Component Analysis (PCA) pada kinerja model klasifikasi menggunakan dataset pasien hepatitis (155 baris, 20 fitur). Decision Tree unggul sebelum reduksi (akurasi 90.3%, F1 95.8%), sementara Logistic Regression meningkat setelah PCA (akurasi 90.3%, F1 93.3%).",
@@ -176,7 +189,7 @@ const PROJECTS = [
   {
     year: "2022",
     title: "Study Program News Retrieval",
-    link: "https://github.com/amandaauliaedu/news-retrieval-tfidf",
+    link: "https://github.com/amandaauliaedu/Information-Retrieval",
     tagline: { id: "Temu Kembali Informasi Berita Kegiatan Program Studi (TF-IDF & Cosine Similarity)", en: "Study Program News Information Retrieval (TF-IDF & Cosine Similarity)" },
     desc: {
       id: "Mengembangkan prototipe sistem penelusuran informasi untuk mencari konten berita program studi menggunakan algoritma TF-IDF dan Cosine Similarity, diuji pada 22 konten berita Sains Data UPN Veteran Jawa Timur.",
@@ -191,13 +204,13 @@ const PROJECTS = [
   {
     year: "2023",
     title: "Classification Model Comparison",
-    link: "https://github.com/amandaauliaedu/classification-model-comparison",
+    link: "https://github.com/amandaauliaedu/Classification-Model-Comparison",
     tagline: { id: "Analisis Perbandingan Performa Model Klasifikasi", en: "Classification Model Performance Comparison" },
     desc: {
       id: "Membandingkan kinerja K-Nearest Neighbor, Logistic Regression, Naïve Bayes, dan Decision Tree pada dataset Iris dan Patient Treatment — mencakup praproses data, EDA, feature engineering, hingga evaluasi model.",
       en: "Compared the performance of K-Nearest Neighbor, Logistic Regression, Naïve Bayes, and Decision Tree on the Iris and Patient Treatment datasets — covering data preprocessing, EDA, feature engineering, and model evaluation.",
     },
-    metrics: [{ label: "Models", value: "4" }, { label: "Datasets", value: "2" }],
+    metrics: [{ label: "Dataset", value: "Iris" }, { label: "Dataset", value: "Patient Treatment" }],
     tags: ["KNN", "Naive Bayes", "Decision Tree"],
     categories: ["Machine Learning", "Data Analytics"],
     featured: false,
@@ -256,57 +269,58 @@ const SKILLS = [
 ];
 
 const CERTS = [
-  { name: "Junior Web Programmer", issuer: "BNSP", date: "2023", image: "/certs/bnsp-junior-web-programmer.jpg" },
-  { name: "Data Bercerita Menggunakan Tableau", issuer: "Sains Data UPN", date: "2022", image: "/certs/tableau-data-bercerita.jpg" },
-  { name: "Pengolahan dan Analisis Data dengan SPSS", issuer: "Sains Data UPN", date: "2022", image: "/certs/spss-pengolahan-data.jpg" },
-  { name: "Mathematics for ML and Data Science", issuer: "Coursera", date: "2023", image: "/certs/math-for-ml.jpg" },
-  { name: "Machine Learning Specialization", issuer: "Coursera", date: "2023", image: "/certs/machine-learning-specialization.jpg" },
-  { name: "DeepLearning.AI TensorFlow Developer", issuer: "Coursera", date: "2023", image: "/certs/tensorflow-developer.jpg" },
-  { name: "TensorFlow: Data and Deployment", issuer: "Coursera", date: "2023", image: "/certs/tensorflow-data-deployment.jpg" },
-  { name: "Become an Excel Expert in 2 Weeks", issuer: "KarirNex", date: "2026", image: "/certs/excel-expert.jpg" },
+  { name: "Junior Web Programmer", issuer: "BNSP", date: "2023", image: "/certs/bnsp-junior-web-programmer.jpg", link: "https://example.com/certificate/bnsp" },
+  { name: "Data Bercerita Menggunakan Tableau", issuer: "Sains Data UPN", date: "2022", image: "/certs/tableau-data-bercerita.jpg", link: "https://example.com/certificate/tableau" },
+  { name: "Pengolahan dan Analisis Data dengan SPSS", issuer: "Sains Data UPN", date: "2022", image: "/certs/spss-pengolahan-data.jpg", link: "https://example.com/certificate/spss" },
+  { name: "Mathematics for ML and Data Science", issuer: "Coursera", date: "2023", image: "/certs/math-for-ml.jpg", link: "https://coursera.org/verify/specialization/example4" },
+  { name: "Machine Learning Specialization", issuer: "Coursera", date: "2023", image: "/certs/machine-learning-specialization.jpg", link: "https://coursera.org/verify/specialization/example3" },
+  { name: "DeepLearning.AI TensorFlow Developer", issuer: "Coursera", date: "2023", image: "/certs/tensorflow-developer.jpg", link: "https://coursera.org/verify/specialization/example2" },
+  { name: "TensorFlow: Data and Deployment", issuer: "Coursera", date: "2023", image: "/certs/tensorflow-data-deployment.jpg", link: "https://coursera.org/verify/specialization/example1" },
+  { name: "Become an Excel Expert in 2 Weeks", issuer: "KarirNex", date: "2026", image: "/certs/excel-expert.jpg", link: "https://example.com/certificate/excel-expert" },
 ];
 
 const ORGS = [
-  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Bendahara", en: "Treasurer" }, period: "2024 – 2025", image: "/orgs/ukm-badminton-bendahara.jpg" },
-  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Departemen Hubungan Masyarakat", en: "Public Relations Department" }, period: "2023 – 2024", image: "/orgs/ukm-badminton-humas.jpg" },
-  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Staf Komisi 2, Badan Legislatif Jurusan", en: "Staff, Commission 2 — Departmental Legislative Body" }, period: "2023 – 2024", image: "/orgs/himasada-blj.jpg" },
-  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Departemen Advokasi dan Kesejahteraan Mahasiswa", en: "Student Advocacy & Welfare Department" }, period: "2022 – 2023", image: "/orgs/himasada-advokesma.jpg" },
+  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Bendahara", en: "Treasurer" }, period: "2024 – 2025", image: "/orgs/ukm-badminton-bendahara.jpg", link: "https://example.com/documentation/badminton-1" },
+  { org: "UKM Badminton UPN Veteran Jawa Timur", role: { id: "Departemen Hubungan Masyarakat", en: "Public Relations Department" }, period: "2023 – 2024", image: "/orgs/ukm-badminton-humas.jpg", link: "https://example.com/documentation/badminton-2" },
+  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Staf Komisi 2, Badan Legislatif Jurusan", en: "Staff, Commission 2 — Departmental Legislative Body" }, period: "2023 – 2024", image: "/orgs/himasada-blj.jpg", link: "https://example.com/documentation/himasada-1" },
+  { org: "HIMASADA — Himpunan Mahasiswa Sains Data", role: { id: "Departemen Advokasi dan Kesejahteraan Mahasiswa", en: "Student Advocacy & Welfare Department" }, period: "2022 – 2023", image: "/orgs/himasada-advokesma.jpg", link: "https://example.com/documentation/himasada-2" },
 ];
 
 const COMMITTEES = [
-  { name: "Veteran Badminton Competition 2024", role: { id: "Steering Committee", en: "Steering Committee" }, year: "2024" },
-  { name: "Malam Keakraban 2024", role: { id: "Steering Committee", en: "Steering Committee" }, year: "2024" },
-  { name: "Sambang Desa 2023", role: { id: "Volunteer & Best Mentor", en: "Volunteer & Best Mentor" }, year: "2023" },
-  { name: "Malam Keakraban 2023", role: { id: "Bendahara", en: "Treasurer" }, year: "2023" },
-  { name: "OSADA 2023", role: { id: "Sekretaris", en: "Secretary" }, year: "2023" },
-  { name: "Akshaya 2022", role: { id: "Divisi Keamanan", en: "Security Division" }, year: "2022" },
-  { name: "SESCOP 2022", role: { id: "Divisi Acara", en: "Event Division" }, year: "2022" },
-  { name: "Malam Keakraban 2022", role: { id: "Divisi Perlengkapan", en: "Logistics Division" }, year: "2022" },
-  { name: "NGOSA KATA 2022", role: { id: "Sekretaris", en: "Secretary" }, year: "2022" },
-  { name: "KKCTBN 2022 — Puspresnas", role: { id: "Liaison Officer", en: "Liaison Officer" }, year: "2022" },
-  { name: "OSADA 2022", role: { id: "Divisi Komisi Disiplin", en: "Discipline Committee" }, year: "2022" },
-  { name: "LOGISTA 2022", role: { id: "Divisi Perlengkapan", en: "Logistics Division" }, year: "2022" },
+  { name: "Veteran Badminton Competition 2024", role: { id: "Steering Committee", en: "Steering Committee" }, year: "2024", image: "/committees/veteran-badminton-competition-2024.jpg", link: "https://example.com/documentation/committee-1" },
+  { name: "Malam Keakraban 2024", role: { id: "Steering Committee", en: "Steering Committee" }, year: "2024", image: "/committees/malam-keakraban-2024.jpg", link: "https://example.com/documentation/committee-2" },
+  { name: "Sambang Desa 2023", role: { id: "Volunteer & Best Mentor", en: "Volunteer & Best Mentor" }, year: "2023", image: "/committees/sambang-desa-2023.jpg", link: "https://example.com/documentation/committee-3" },
+  { name: "Malam Keakraban 2023", role: { id: "Bendahara", en: "Treasurer" }, year: "2023", image: "/committees/malam-keakraban-2023.jpg", link: "https://example.com/documentation/committee-4" },
+  { name: "OSADA 2023", role: { id: "Sekretaris", en: "Secretary" }, year: "2023", image: "/committees/osada-2023.jpg", link: "https://example.com/documentation/committee-5" },
+  { name: "Akshaya 2022", role: { id: "Divisi Keamanan", en: "Security Division" }, year: "2022", image: "/committees/akshaya-2022.jpg", link: "https://example.com/documentation/committee-6" },
+  { name: "SESCOP 2022", role: { id: "Divisi Acara", en: "Event Division" }, year: "2022", image: "/committees/sescop-2022.jpg", link: "https://example.com/documentation/committee-7" },
+  { name: "Malam Keakraban 2022", role: { id: "Divisi Perlengkapan", en: "Logistics Division" }, year: "2022", image: "/committees/malam-keakraban-2022.jpg", link: "https://example.com/documentation/committee-8" },
+  { name: "NGOSA KATA 2022", role: { id: "Sekretaris", en: "Secretary" }, year: "2022", image: "/committees/ngosa-kata-2022.jpg", link: "https://example.com/documentation/committee-9" },
+  { name: "KKCTBN 2022 — Puspresnas", role: { id: "Liaison Officer", en: "Liaison Officer" }, year: "2022", image: "/committees/kkctbn-2022.jpg", link: "https://example.com/documentation/committee-10" },
+  { name: "OSADA 2022", role: { id: "Divisi Komisi Disiplin", en: "Discipline Committee" }, year: "2022", image: "/committees/osada-2022.jpg", link: "https://example.com/documentation/committee-11" },
+  { name: "LOGISTA 2022", role: { id: "Divisi Perlengkapan", en: "Logistics Division" }, year: "2022", image: "/committees/logista-2022.jpg", link: "https://example.com/documentation/committee-12" },
 ];
 
 const T = {
   heroGreeting: { id: "Halo, saya", en: "Hi, I'm" },
   heroName: "Amanda Aulia",
-  heroTagline: { id: "Mengubah data mentah menjadi keputusan yang tepat.", en: "Turning raw data into decisions that hold up." },
   ctaProjects: { id: "Lihat Proyek", en: "View Projects" },
   ctaContact: { id: "Hubungi Saya", en: "Get in Touch" },
   ctaCV: { id: "Unduh CV", en: "Download CV" },
   sectionAbout: { id: "Tentang Saya", en: "About Me" },
+  sectionEducation: { id: "Riwayat Pendidikan", en: "Education" },
   sectionExperience: { id: "Pengalaman", en: "Experience" },
   sectionProjects: { id: "Proyek & Publikasi", en: "Projects & Publications" },
   sectionSkills: { id: "Keahlian", en: "Skills" },
   sectionCerts: { id: "Sertifikasi & Pelatihan", en: "Certifications & Training" },
   certsSub: { id: "Kredensial yang mendukung pekerjaan saya di bidang data.", en: "Credentials backing up my work in data and analytics." },
   sectionActivities: { id: "Organisasi & Kepanitiaan", en: "Organizations & Committees" },
+  organizationsLabel: { id: "ORGANISASI", en: "ORGANIZATIONS" },
   committeesLabel: { id: "KEPANITIAAN", en: "COMMITTEES" },
   sectionContactEyebrow: { id: "Kontak", en: "Contact" },
-  contactHeading1: { id: "Mari terhubung, ", en: "Let's talk, " },
-  contactHeading2: { id: "Yuk ", en: "Shall we " },
-  contactSub: { id: "Terbuka untuk peluang kerja, kolaborasi proyek data, atau sekadar ngobrol soal data & AI. Klik email untuk menyalin, atau isi form di samping.", en: "Open to job opportunities, data project collaborations, or just geeking out about data & AI. Click the email to copy it, or fill out the form." },
+  contactHeading1: { id: "Mari terhubung", en: "Let's talk" },
+  contactHeading2: { id: "", en: "" },
+  contactSub: { id: "Terbuka untuk peluang kerja, kolaborasi proyek data, atau sekadar ngobrol soal data & AI.", en: "Open to job opportunities, data project collaborations, or just geeking out about data & AI." },
   emailLabel: { id: "Email — klik untuk salin", en: "Email — click to copy" },
   copied: { id: "Tersalin!", en: "Copied!" },
   whatsappLabel: { id: "WhatsApp", en: "WhatsApp" },
@@ -402,6 +416,7 @@ export default function AmandaAuliaPortfolio() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [certIdx, setCertIdx] = useState(0);
   const [skillIdx, setSkillIdx] = useState(0);
+  const [lightbox, setLightbox] = useState(null);
 
   useEffect(() => {
     const t = setInterval(() => setRoleIdx((i) => (i + 1) % ROLES.length), 2600);
@@ -508,10 +523,10 @@ export default function AmandaAuliaPortfolio() {
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b" style={{ background: theme.navBg, borderColor: theme.cardBorder }}>
         <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="text-lg font-semibold tracking-tight" style={fontDisplay}>
-            Amanda<span style={{ color: accents.teal }}>.</span>Aulia
+            Amanda Aulia
           </button>
 
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-5">
             {NAV.map((n) => (
               <button key={n.href} onClick={() => scrollTo(n.href)} className="text-sm font-medium transition-colors" style={{ color: theme.subtext }}>
                 {L(n, lang)}
@@ -533,7 +548,7 @@ export default function AmandaAuliaPortfolio() {
               </AnimatePresence>
             </button>
 
-            <button className="md:hidden w-9 h-9 rounded-full border flex items-center justify-center" style={{ borderColor: theme.cardBorder, background: theme.pillBg }} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+            <button className="lg:hidden w-9 h-9 rounded-full border flex items-center justify-center" style={{ borderColor: theme.cardBorder, background: theme.pillBg }} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
               {menuOpen ? <X size={16} /> : <Menu size={16} />}
             </button>
           </div>
@@ -541,7 +556,7 @@ export default function AmandaAuliaPortfolio() {
 
         <AnimatePresence>
           {menuOpen && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="md:hidden overflow-hidden border-t" style={{ borderColor: theme.cardBorder }}>
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="lg:hidden overflow-hidden border-t" style={{ borderColor: theme.cardBorder }}>
               <div className="flex flex-col px-5 py-3 gap-3">
                 {NAV.map((n) => (
                   <button key={n.href} onClick={() => scrollTo(n.href)} className="text-sm text-left font-medium" style={{ color: theme.subtext }}>
@@ -572,9 +587,6 @@ export default function AmandaAuliaPortfolio() {
                   </motion.p>
                 </AnimatePresence>
               </div>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <p className="text-base md:text-lg max-w-md mb-8" style={{ color: theme.subtext }}>{L(T.heroTagline, lang)}</p>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="flex flex-wrap gap-3 mb-6">
@@ -628,7 +640,7 @@ export default function AmandaAuliaPortfolio() {
         <Reveal>
           <SectionHeading icon={<GraduationCap size={16} />} title={L(T.sectionAbout, lang)} theme={theme} accent={accents.teal} />
         </Reveal>
-        <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 mt-8">
+        <div className="mt-8">
           <Reveal>
             <GlassCard theme={theme} className="p-6 md:p-8" hover={false}>
               <p className="text-base md:text-lg leading-relaxed" style={{ color: theme.subtext }}>{L(ABOUT, lang)}</p>
@@ -637,15 +649,45 @@ export default function AmandaAuliaPortfolio() {
               </div>
             </GlassCard>
           </Reveal>
+        </div>
 
-          <div className="flex flex-col gap-4">
+        {/* EDUCATION — its own heading, image banner, CV bullet points, and a link per entry */}
+        <div className="mt-14" id="education">
+          <Reveal>
+            <SectionHeading icon={<Award size={16} />} title={L(T.sectionEducation, lang)} theme={theme} accent={accents.violet} />
+          </Reveal>
+          <div className="grid md:grid-cols-2 gap-5 mt-8">
             {EDUCATION.map((e, i) => (
               <Reveal key={i} delay={i * 0.08}>
-                <GlassCard theme={theme} className="p-5">
-                  <p className="text-[11px]" style={{ ...fontMono, color: theme.faint }}>{e.period}</p>
-                  <p className="font-semibold mt-1" style={fontDisplay}>{e.school}</p>
-                  <p className="text-sm mt-1" style={{ color: accents.violet }}>{L(e.degree, lang)}</p>
-                  <p className="text-sm mt-2" style={{ color: theme.subtext }}>{L(e.note, lang)}</p>
+                <GlassCard theme={theme} className="overflow-hidden h-full flex flex-col" style={{ padding: 0 }}>
+                  <button
+                    type="button"
+                    onClick={() => setLightbox({ src: e.image, alt: e.school })}
+                    className="relative w-full h-40 md:h-44 overflow-hidden group"
+                  >
+                    <img src={e.image} alt={e.school} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <span className="absolute top-3 right-3 w-7 h-7 rounded-full flex items-center justify-center bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Maximize2 size={13} />
+                    </span>
+                    <span className="absolute bottom-0 left-0 right-0 px-3 py-1.5 text-[11px]" style={{ ...fontMono, color: "#fff", background: "linear-gradient(to top, rgba(0,0,0,0.65), transparent)" }}>{e.period}</span>
+                  </button>
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="font-semibold" style={fontDisplay}>{e.school}</p>
+                      <a href={e.link} target="_blank" rel="noreferrer" aria-label={`Visit ${e.school} website`} className="shrink-0 p-1 -m-1 rounded-full transition-colors" style={{ color: theme.faint }} onMouseEnter={(ev) => (ev.currentTarget.style.color = accents.violet)} onMouseLeave={(ev) => (ev.currentTarget.style.color = theme.faint)}>
+                        <ExternalLink size={15} />
+                      </a>
+                    </div>
+                    <p className="text-sm mt-1" style={{ color: accents.violet }}>{L(e.degree, lang)}</p>
+                    <ul className="flex flex-col gap-1.5 mt-3">
+                      {e.points.map((p, j) => (
+                        <li key={j} className="text-sm flex gap-2" style={{ color: theme.subtext }}>
+                          <span style={{ color: accents.teal }}>—</span>
+                          <span>{L(p, lang)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </GlassCard>
               </Reveal>
             ))}
@@ -769,10 +811,9 @@ export default function AmandaAuliaPortfolio() {
       </section>
 
       {/* CERTIFICATIONS — coverflow carousel, auto every 8s */}
-      <section className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 py-20">
+      <section id="certifications" className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 py-20">
         <Reveal>
           <SectionHeading icon={<GraduationCap size={16} />} title={L(T.sectionCerts, lang)} theme={theme} accent={accents.violet} />
-          <p className="mt-2 text-sm" style={{ color: theme.subtext }}>{L(T.certsSub, lang)}</p>
         </Reveal>
 
         <Reveal delay={0.05}>
@@ -794,9 +835,19 @@ export default function AmandaAuliaPortfolio() {
                     className={`rounded-2xl border overflow-hidden shrink-0 ${isCenter ? "w-56 md:w-72" : "hidden sm:block w-40 md:w-56"}`}
                     style={{ borderColor: theme.cardBorder, background: theme.cardBg }}
                   >
-                    <CertPaper height={isCenter ? 140 : 110} accent={accentCycle[(certIdx + offset + CERTS.length) % 3]} compact={!isCenter} image={c.image} alt={c.name} />
+                    <button type="button" onClick={() => setLightbox({ src: c.image, alt: c.name })} className="relative w-full block group">
+                      <CertPaper height={isCenter ? 140 : 110} accent={accentCycle[(certIdx + offset + CERTS.length) % 3]} compact={!isCenter} image={c.image} alt={c.name} />
+                      <span className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Maximize2 size={11} />
+                      </span>
+                    </button>
                     <div className="p-4">
-                      <p className={`font-semibold leading-snug ${isCenter ? "text-sm md:text-base" : "text-xs"}`} style={{ color: theme.text }}>{c.name}</p>
+                      <div className="flex items-start justify-between gap-2">
+                        <p className={`font-semibold leading-snug ${isCenter ? "text-sm md:text-base" : "text-xs"}`} style={{ color: theme.text }}>{c.name}</p>
+                        <a href={c.link} target="_blank" rel="noreferrer" aria-label={`View certificate: ${c.name}`} className="shrink-0 transition-colors" style={{ color: theme.faint }} onMouseEnter={(ev) => (ev.currentTarget.style.color = accents.violet)} onMouseLeave={(ev) => (ev.currentTarget.style.color = theme.faint)}>
+                          <ExternalLink size={13} />
+                        </a>
+                      </div>
                       <p className="text-xs mt-1" style={{ color: accents.violet }}>{c.issuer}</p>
                       <p className="text-[11px] mt-1" style={{ ...fontMono, color: theme.faint }}>{c.date}</p>
                     </div>
@@ -823,15 +874,28 @@ export default function AmandaAuliaPortfolio() {
         <Reveal>
           <SectionHeading icon={<Users size={16} />} title={L(T.sectionActivities, lang)} theme={theme} accent={accents.violet} />
         </Reveal>
-        <div className="grid md:grid-cols-2 gap-5 mt-8">
+        <Reveal delay={0.02}>
+          <p className="text-sm font-semibold mt-2 mb-3" style={{ ...fontMono, color: theme.faint }}>{L(T.organizationsLabel, lang)}</p>
+        </Reveal>
+        <div className="grid md:grid-cols-2 gap-5 mt-2">
           {ORGS.map((o, i) => (
             <Reveal key={i} delay={i * 0.06}>
-              <GlassCard theme={theme} className="overflow-hidden" style={{ padding: 0 }}>
-                <CertPaper height={72} accent={accentCycle[i % 3]} compact image={o.image} alt={o.org} />
-                <div className="p-5">
-                  <p className="font-semibold" style={fontDisplay}>{o.org}</p>
+              <GlassCard theme={theme} className="overflow-hidden h-full flex flex-col" style={{ padding: 0 }}>
+                <button type="button" onClick={() => setLightbox({ src: o.image, alt: o.org })} className="relative w-full h-40 md:h-44 overflow-hidden group block">
+                  <img src={o.image} alt={o.org} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <span className="absolute top-3 right-3 w-7 h-7 rounded-full flex items-center justify-center bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Maximize2 size={13} />
+                  </span>
+                  <span className="absolute bottom-0 left-0 right-0 px-3 py-1.5 text-[11px]" style={{ ...fontMono, color: "#fff", background: "linear-gradient(to top, rgba(0,0,0,0.65), transparent)" }}>{o.period}</span>
+                </button>
+                <div className="p-5 flex-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="font-semibold" style={fontDisplay}>{o.org}</p>
+                    <a href={o.link} target="_blank" rel="noreferrer" aria-label={`View documentation for ${o.org}`} className="shrink-0 p-1 -m-1 rounded-full transition-colors" style={{ color: theme.faint }} onMouseEnter={(ev) => (ev.currentTarget.style.color = accents.violet)} onMouseLeave={(ev) => (ev.currentTarget.style.color = theme.faint)}>
+                      <ExternalLink size={15} />
+                    </a>
+                  </div>
                   <p className="text-sm mt-1" style={{ color: accents.violet }}>{L(o.role, lang)}</p>
-                  <p className="text-xs mt-2" style={{ ...fontMono, color: theme.faint }}>{o.period}</p>
                 </div>
               </GlassCard>
             </Reveal>
@@ -842,13 +906,23 @@ export default function AmandaAuliaPortfolio() {
           <p className="text-sm font-semibold mt-10 mb-3" style={{ ...fontMono, color: theme.faint }}>{L(T.committeesLabel, lang)}</p>
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: "thin" }}>
             {COMMITTEES.map((c, i) => (
-              <div key={i} className="snap-start shrink-0 w-56 rounded-2xl border p-5" style={{ borderColor: theme.cardBorder, background: theme.cardBg }}>
-                <span className="inline-flex w-8 h-8 rounded-full items-center justify-center mb-3" style={{ background: `${accentCycle[i % 3]}22`, color: accentCycle[i % 3] }}>
-                  <Users size={14} />
-                </span>
-                <p className="text-sm font-medium leading-snug" style={{ color: theme.text }}>{c.name}</p>
-                <p className="text-xs mt-2" style={{ color: accents.coral }}>{L(c.role, lang)}</p>
-                <p className="text-[11px] mt-1" style={{ ...fontMono, color: theme.faint }}>{c.year}</p>
+              <div key={i} className="snap-start shrink-0 w-56 rounded-2xl border overflow-hidden" style={{ borderColor: theme.cardBorder, background: theme.cardBg }}>
+                <button type="button" onClick={() => setLightbox({ src: c.image, alt: c.name })} className="relative w-full h-28 block group">
+                  <img src={c.image} alt={c.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <span className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Maximize2 size={11} />
+                  </span>
+                </button>
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="text-sm font-medium leading-snug" style={{ color: theme.text }}>{c.name}</p>
+                    <a href={c.link} target="_blank" rel="noreferrer" aria-label={`View documentation for ${c.name}`} className="shrink-0 transition-colors" style={{ color: theme.faint }} onMouseEnter={(ev) => (ev.currentTarget.style.color = accents.coral)} onMouseLeave={(ev) => (ev.currentTarget.style.color = theme.faint)}>
+                      <ExternalLink size={13} />
+                    </a>
+                  </div>
+                  <p className="text-xs mt-2" style={{ color: accents.coral }}>{L(c.role, lang)}</p>
+                  <p className="text-[11px] mt-1" style={{ ...fontMono, color: theme.faint }}>{c.year}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -860,7 +934,7 @@ export default function AmandaAuliaPortfolio() {
         <Reveal>
           <p className="text-sm font-semibold mb-2" style={{ ...fontMono, color: theme.faint }}>{L(T.sectionContactEyebrow, lang).toUpperCase()}</p>
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4" style={fontDisplay}>
-            {L(T.contactHeading1, lang)}<span style={{ color: accents.violet }}>{L(T.contactHeading2, lang)}</span>
+            {L(T.contactHeading1, lang)}
           </h2>
           <p className="max-w-lg mb-10" style={{ color: theme.subtext }}>{L(T.contactSub, lang)}</p>
         </Reveal>
@@ -924,6 +998,42 @@ export default function AmandaAuliaPortfolio() {
       <footer className="relative z-10 text-center pb-10 text-xs" style={{ color: theme.faint, ...fontMono }}>
         © 2026 Amanda Aulia — {L(T.footerNote, lang)}
       </footer>
+
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6"
+            style={{ background: "rgba(5,6,10,0.88)" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightbox(null)}
+          >
+            <motion.img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="max-w-full max-h-[85vh] rounded-xl object-contain"
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              type="button"
+              onClick={() => setLightbox(null)}
+              aria-label="Close"
+              className="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center text-white"
+              style={{ background: "rgba(255,255,255,0.12)" }}
+            >
+              <X size={18} />
+            </button>
+            {lightbox.alt && (
+              <p className="absolute bottom-6 left-0 right-0 text-center text-sm text-white/80 px-6">{lightbox.alt}</p>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
